@@ -9,6 +9,7 @@ import {
   Name,
   Tags,
 } from "./style";
+import { FormatMoney } from "../../../../utils/format-money";
 
 export interface Coffee {
   id: number;
@@ -24,9 +25,11 @@ interface Props {
 }
 
 export function CoffeeCard({ coffee }: Props) {
+  const formattedPrice = FormatMoney(coffee.price);
+
   return (
     <Container>
-      <img src={`/coffees/${coffee.photo}`} />
+      <img src={`/coffees/${coffee.photo}`} alt="Img Coffee" />
       <Tags>
         {coffee.tags.map((tag) => (
           <span key={`${coffee.id}-${tag}`}>{tag}</span>
@@ -38,7 +41,7 @@ export function CoffeeCard({ coffee }: Props) {
         <div>
           <RegularText size="s">R$</RegularText>
           <TitleText size="m" color="text" as="strong">
-            {coffee.price}
+            {formattedPrice}
           </TitleText>
         </div>
         <AddCartWrapper>
