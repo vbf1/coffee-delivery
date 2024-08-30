@@ -30,7 +30,7 @@ export const InputStyleContainer = styled.div<InputStyleContainerProps>`
     border-color: ${({ theme }) => theme.colors["brand-yellow-dark"]};
   }
 
-  ${({ theme, hasError }) =>
+  ${({ hasError }) =>
     hasError &&
     css`
       border-color: ${({ theme }) => theme.colors["base-error"]};
