@@ -13,8 +13,8 @@ export const Container = styled.button`
   line-height: 1.3rem;
   margin-top: 0.7rem;
 
-  &disabled {
-    opacity: 0.7;
+  &:disabled {
+    opacity: 0.4;
     cursor: not-allowed;
   }
 
